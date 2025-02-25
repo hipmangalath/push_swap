@@ -6,23 +6,11 @@
 /*   By: haiqbal <haiqbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 20:57:55 by haiqbal           #+#    #+#             */
-/*   Updated: 2025/02/25 21:30:55 by haiqbal          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:47:27 by haiqbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	print_stack(t_stack_node *a)
-// {
-// 	t_stack_node	*tmp;
-
-// 	tmp = a;
-// 	while (tmp)
-// 	{
-// 		printf("%d\n", tmp->nbr);
-// 		tmp = tmp->next;
-// 	}
-// }
 
 int	main(int ac, char **av)
 {
@@ -41,7 +29,6 @@ int	main(int ac, char **av)
 		exit(1);
 	}
 	create_stack(&a, av);
-	// print_stack(a); // This is a test function to print the stack
 	dupli_check_true(a);
 	create_stack(&clone, av);
 	sort_stack(clone);
