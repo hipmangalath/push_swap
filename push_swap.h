@@ -6,7 +6,7 @@
 /*   By: haiqbal <haiqbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 20:56:00 by haiqbal           #+#    #+#             */
-/*   Updated: 2025/02/25 21:16:26 by haiqbal          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:31:23 by haiqbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void			*ft_calloc(size_t count, size_t size);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 int				ft_strlen(const char *s);
 char			**ft_split(char const *s, char c);
-void			sort_init(t_stack_node *a, t_stack_node *b,
-					t_stack_node *clone);
 void			push(t_stack_node **a, t_stack_node **b);
 void			pa(t_stack_node **a, t_stack_node **b);
 void			pb(t_stack_node **a, t_stack_node **b);
@@ -55,7 +53,7 @@ void			create_stack(t_stack_node **a, char **av);
 void			append_node(t_stack_node **a, t_stack_node *new);
 t_stack_node	*last_node(t_stack_node *a);
 void			swap(t_stack_node *a, t_stack_node *b);
-int				stack_sort_check(t_stack_node *a);
+void			stack_sort_check(t_stack_node *a, t_stack_node *clone);
 void			sort_stack(t_stack_node *clone);
 void			assign_index_stack(t_stack_node *a, t_stack_node *c);
 t_stack_node	*new_node(int nbr, int index);

@@ -6,7 +6,7 @@
 /*   By: haiqbal <haiqbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 20:57:55 by haiqbal           #+#    #+#             */
-/*   Updated: 2025/02/25 21:29:31 by haiqbal          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:30:55 by haiqbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int ac, char **av)
 	dupli_check_true(a);
 	create_stack(&clone, av);
 	sort_stack(clone);
-	stack_sort_check(a);
+	stack_sort_check(a, clone);
 	assign_index_stack(a, clone);
 	free_stack(clone);
 	sort(a, b);

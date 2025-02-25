@@ -6,7 +6,7 @@
 /*   By: haiqbal <haiqbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 15:28:32 by haiqbal           #+#    #+#             */
-/*   Updated: 2025/02/25 21:28:37 by haiqbal          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:31:44 by haiqbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	swap(t_stack_node *a, t_stack_node *b)
 	b->nbr = temp;
 }
 
-int	stack_sort_check(t_stack_node *a, t_stack_node *clone)
+void	stack_sort_check(t_stack_node *a, t_stack_node *clone)
 {
 	t_stack_node	*tmp;
 	t_stack_node	*tmp1;
@@ -50,8 +50,8 @@ int	stack_sort_check(t_stack_node *a, t_stack_node *clone)
 		else
 			return ;
 	}
-	ft_free_stack(tmp);
-	ft_free_stack(tmp1);
+	free_stack(tmp);
+	free_stack(tmp1);
 	exit(0);
 }
 
