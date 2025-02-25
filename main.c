@@ -6,7 +6,7 @@
 /*   By: haiqbal <haiqbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 20:57:55 by haiqbal           #+#    #+#             */
-/*   Updated: 2025/02/23 19:42:03 by haiqbal          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:00:16 by haiqbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,5 @@ int	main(int ac, char **av)
 	sort_init(a, b, clone);
 	free_stack(clone);
 	free_stack(a);
-	free_stack(b);
 	return (0);
 }

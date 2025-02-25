@@ -6,7 +6,7 @@
 /*   By: haiqbal <haiqbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 21:15:45 by haiqbal           #+#    #+#             */
-/*   Updated: 2025/02/23 19:42:09 by haiqbal          ###   ########.fr       */
+/*   Updated: 2025/02/25 19:59:58 by haiqbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,17 @@ void	free_errors(t_stack_node *a)
 
 void	dupli_check_true(t_stack_node *a)
 {
+	t_stack_node	*orig;
 	t_stack_node	*temp;
 
+	orig = a;
 	while (a != NULL)
 	{
 		temp = a->next;
 		while (temp != NULL)
 		{
 			if (a->nbr == temp->nbr)
-				free_errors(a);
+				free_errors(orig);
 			temp = temp->next;
 		}
 		a = a->next;
