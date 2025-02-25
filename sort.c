@@ -6,7 +6,7 @@
 /*   By: haiqbal <haiqbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 22:02:44 by haiqbal           #+#    #+#             */
-/*   Updated: 2025/02/25 20:03:51 by haiqbal          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:29:40 by haiqbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,5 @@ void	sort(t_stack_node *a, t_stack_node *b)
 		five_sort(&a, &b);
 	else
 		radix_sort(&a, &b, size);
+	free_stack(a);
 }

@@ -6,7 +6,7 @@
 /*   By: haiqbal <haiqbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 15:28:32 by haiqbal           #+#    #+#             */
-/*   Updated: 2025/02/22 21:04:04 by haiqbal          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:28:37 by haiqbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,62 +24,63 @@ t_stack_node	*last_node(t_stack_node *a)
 	return (ptr);
 }
 
-void	ft_index(t_stack_node *clone)
+void	swap(t_stack_node *a, t_stack_node *b)
 {
-	int	i;
+	int	temp;
 
-	i = 0;
-	while (clone)
-	{
-		clone->index = i;
-		clone = clone->next;
-		i++;
-	}
+	temp = a->nbr;
+	a->nbr = b->nbr;
+	b->nbr = temp;
 }
 
-int	stack_sort_check(t_stack_node *a)
+int	stack_sort_check(t_stack_node *a, t_stack_node *clone)
 {
-	t_stack_node	*n1;
-	t_stack_node	*n2;
+	t_stack_node	*tmp;
+	t_stack_node	*tmp1;
 
-	n1 = a;
-	while (n1->next)
+	tmp = a;
+	tmp1 = clone;
+	while (a != NULL)
 	{
-		n2 = n1->next;
-		while (n2)
+		if (clone->nbr == a->nbr)
 		{
-			if (n1->nbr > n2->nbr)
-				return (0);
-			n2 = n2->next;
+			a = a->next;
+			clone = clone->next;
 		}
-		n1 = n1->next;
+		else
+			return ;
 	}
-	return (1);
+	ft_free_stack(tmp);
+	ft_free_stack(tmp1);
+	exit(0);
 }
 
 void	sort_stack(t_stack_node *clone)
 {
-	t_stack_node	*n1;
-	t_stack_node	*n2;
-	int				tmp;
+	int		i;
+	t_stack_node	*tmp;
 
-	n1 = clone;
-	while (n1)
+	if (!clone)
+		exit(1);
+	tmp = clone;
+	while (clone->next != NULL)
 	{
-		n2 = n1->next;
-		while (n2)
+		if (clone->nbr > clone->next->nbr)
 		{
-			if (n1->nbr > n2->nbr)
-			{
-				tmp = n1->nbr;
-				n1->nbr = n2->nbr;
-				n2->nbr = tmp;
-			}
-			n2 = n2->next;
+			swap(clone, clone->next);
+			clone = tmp;
 		}
-		n1 = n1->next;
+		else
+			clone = clone->next;
 	}
-	ft_index(clone);
+	clone = tmp;
+	i = 0;
+	while (clone != NULL)
+	{
+		clone->index = i;
+		i++;
+		clone = clone->next;
+	}
 }
 
 void	assign_index_stack(t_stack_node *a, t_stack_node *c)

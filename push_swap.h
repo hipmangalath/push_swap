@@ -6,7 +6,7 @@
 /*   By: haiqbal <haiqbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 20:56:00 by haiqbal           #+#    #+#             */
-/*   Updated: 2025/02/23 19:42:35 by haiqbal          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:16:26 by haiqbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack_node
 }	t_stack_node;
 
 //functions
-void	free_stack(t_stack_node *a);
+void			free_stack(t_stack_node *a);
 void			free_errors(t_stack_node *a);
 void			dupli_check_true(t_stack_node *a);
 int				ft_isdigit(int i);
@@ -48,13 +48,13 @@ void			three_sort(t_stack_node **a);
 void			four_sort(t_stack_node **a, t_stack_node **b);
 void			five_sort(t_stack_node **a, t_stack_node **b);
 void			sort(t_stack_node *a, t_stack_node *b);
-long long	ft_atol(char *str);
+long long		ft_atol(char *str);
 int				check_av(char **av);
 int				stack_init(t_stack_node **a, char *av);
 void			create_stack(t_stack_node **a, char **av);
 void			append_node(t_stack_node **a, t_stack_node *new);
 t_stack_node	*last_node(t_stack_node *a);
-void			ft_index(t_stack_node *clone);
+void			swap(t_stack_node *a, t_stack_node *b);
 int				stack_sort_check(t_stack_node *a);
 void			sort_stack(t_stack_node *clone);
 void			assign_index_stack(t_stack_node *a, t_stack_node *c);
